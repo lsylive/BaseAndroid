@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/context3_sub2"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    
+    <TableRow
+            android:id="@+id/tableRow1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="4" >
+
+        </TableRow>
+
+         <TableRow
+            android:id="@+id/tableRow2"
+            android:layout_width="wrap_content"
+      		android:layout_height="wrap_content"
+      		 android:gravity="center_horizontal"
+      		android:layout_weight="1" >
+
+                  <TextView
+                      android:id="@+id/welcomeLable"
+                      android:gravity="center_horizontal"
+                      android:text="Tab Content 3 sub 2" />
+
+      		 </TableRow>
+			
+</TableLayout>

@@ -1,0 +1,15 @@
+<resources>
+
+    <color name="black_overlay">#66000000</color>
+	<color name="transparent">#00000000</color>
+	<color name="white">#ffffff</color>
+	<color name="gray">#EEEEEE</color>
+	
+	
+	
+	<color name="login_body">#3cb371</color>
+	<color name="head">#1F8CDF</color>
+	<color name="body">#ffffff</color>
+	<color name="footBar">#ffffff</color>
+
+</resources>

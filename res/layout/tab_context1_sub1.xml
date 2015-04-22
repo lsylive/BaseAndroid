@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <ScrollView    
+    xmlns:android="http://schemas.android.com/apk/res/android"    
+    android:layout_width="fill_parent"    
+    android:layout_height="fill_parent"    
+    android:scrollbars="vertical"    
+    android:fadingEdge="vertical">    
+    <LinearLayout    
+        android:layout_width="fill_parent"    
+        android:layout_height="fill_parent"    
+        android:orientation="vertical"    
+        >    
+    <!-- 时实负荷情况
+       -->
+      
+    <ListView
+        android:id="@+id/chartListViewSSFH"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+    </ListView>
+    
+    
+    
+    
+    <!-- 负荷总量
+           -->
+
+    <ListView
+        android:id="@+id/chartListViewFHZL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+    </ListView>
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:text="申报进度" />
+
+    <RadioButton
+        android:id="@+id/radioButton1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:gravity="center"
+        android:background="@color/head"
+        android:text="已经完成" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:text="申报削减负荷总量" />
+
+    <RadioButton
+        android:id="@+id/radioButton2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:background="@color/gray"
+        android:gravity="center"
+        android:text="200瓦" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="申报削减明细" />
+
+    <ListView
+        android:id="@+id/listViewSBXJMX"
+        android:layout_width="match_parent"
+        android:layout_height="200dp" >
+    </ListView>
+
+</LinearLayout>
+</ScrollView>
