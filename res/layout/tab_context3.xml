@@ -4,33 +4,80 @@
     android:id="@+id/context3"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="@color/white"
+    android:background="@color/body"
     android:orientation="vertical" >
     
-         <LinearLayout
-             android:layout_width="match_parent"
-             android:layout_height="5dp"
-             android:orientation="horizontal" >
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:orientation="vertical" >
 
-             <LinearLayout
-                 android:layout_width="match_parent"
-                 android:layout_height="match_parent"
-                 android:layout_weight="1"
-                 android:background="@color/footBar"
-                 android:id="@+id/context3_rb1"
-                 android:orientation="vertical" >
-             </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+             android:layout_weight="1"
+            android:orientation="horizontal" >
 
-             <LinearLayout
-                 android:layout_width="match_parent"
-                  android:layout_weight="1"
-                 android:layout_height="match_parent"
-                 android:id="@+id/context3_rb2"
-                 android:orientation="vertical" >
-             </LinearLayout>
+            <TextView 
+                 android:id="@+id/context3_rbTxt1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="sub1"
+                android:layout_weight="1"
+                android:gravity="center" />
+              <TextView 
+                 android:id="@+id/context3_rbTxt2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="sub2"
+                android:gravity="center" />
+                  <TextView 
+                 android:id="@+id/context3_rbTxt3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                 android:text="sub3"
+                android:gravity="center" />
+        </LinearLayout>
 
-         </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:layout_marginBottom="1dp"
+            android:orientation="horizontal" >
+
+            <LinearLayout
+                android:id="@+id/context3_rb1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/head"
+                android:orientation="vertical" >
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/context3_rb2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical" >
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/context3_rb3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical" >
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
          
+    
+    
+    
            <LinearLayout
              android:id="@+id/tab_context3_fragmentRoot"  
              android:layout_width="match_parent"  

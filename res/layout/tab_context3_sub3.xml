@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/context5"
+    android:id="@+id/context3_sub3"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:background="@color/body"
@@ -26,7 +26,7 @@
                   <TextView
                       android:id="@+id/welcomeLable"
                       android:gravity="center_horizontal"
-                      android:text="Tab Content 5" />
+                      android:text="Tab Content 3 sub 3" />
 
       		 </TableRow>
 			

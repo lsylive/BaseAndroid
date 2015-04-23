@@ -6,11 +6,11 @@ import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.View.OnTouchListener;
 import android.widget.Toast;
 
 import com.example.ep.R;
 import com.example.ep.util.FragmentMangeUtil;
+import com.example.ep.util.MoveListerner;
 
 @SuppressLint({ "NewApi", "ValidFragment" })
 public class TabContext3 extends AbsTabContext {
@@ -40,16 +40,24 @@ public class TabContext3 extends AbsTabContext {
 		
 		fgmUtil.putSubFragme(R.id.context3_rb1, new TabContext(R.layout.tab_context3_sub1));
 		fgmUtil.putSubFragme(R.id.context3_rb2,new TabContext(R.layout.tab_context3_sub2));
+		fgmUtil.putSubFragme(R.id.context3_rb3,new TabContext(R.layout.tab_context3_sub3));
 		
 		initFirstFragment(R.id.context3_rb1);
 		
 		
-//		acMain.findViewById(R.id.context3).setOnTouchListener(new OnTouchListener(){
-//			@Override
-//			public boolean onTouch(View arg0, MotionEvent arg1) {
-//				dispatchTouchEvent(arg1);
-//				return false;
-//			}});
+		acMain.findViewById(R.id.context3).setOnTouchListener(new MoveListerner(acMain){
+			@Override
+			public void moveDirection(View v, int direction) {
+				transformLeftOrRight(direction);
+			}
+			@Override
+			public void moveUpAndDownDistance(MotionEvent event, int distance,
+					int distanceY) {
+			}
+			@Override
+			public void moveOver() {
+			}
+		});
 	}
 	
 	
@@ -59,82 +67,50 @@ public class TabContext3 extends AbsTabContext {
 	 */
 	private void initFirstFragment(Integer rbId)
 	{
-		acMain.findViewById(rbId).setBackgroundResource(R.color.black_overlay);
+		acMain.findViewById(rbId).setBackgroundResource(R.color.head);
 		fgmUtil.addFragmentManager(rbId);		
 	}
 	
+
 	
 	
-	/*
-	 * 上下左右事件
-	 */
-	private float mPosX;
-	private float mPosY;
-	private float mCurrentPosX;
-	private float mCurrentPosY;
-	public boolean dispatchTouchEvent(MotionEvent event) {
-		switch (event.getAction()) {
-		// 按下
-		case MotionEvent.ACTION_DOWN:
-			mPosX = event.getX();
-			mPosY = event.getY();
-			break;
-		// 移动
-		case MotionEvent.ACTION_MOVE:
-			mCurrentPosX = event.getX();
-			mCurrentPosY = event.getY();
-			if (mCurrentPosX - mPosX > 0 && Math.abs(mCurrentPosY - mPosY) < 10) {
-				transformLeftOrRight(MotionEvent.EDGE_RIGHT);
-			} else if (mCurrentPosX - mPosX < 0 && Math.abs(mCurrentPosY - mPosY) < 10) {
-				transformLeftOrRight(MotionEvent.EDGE_LEFT);
-			}
-			else if (mCurrentPosY - mPosY > 0 && Math.abs(mCurrentPosX - mPosX) < 10) {
-				//transformTopOrBottom(MotionEvent.EDGE_BOTTOM);
-			}
-			else if (mCurrentPosY - mPosY < 0 && Math.abs(mCurrentPosX - mPosX) < 10) {
-				//transformTopOrBottom(MotionEvent.EDGE_TOP);
-			}
-			break;
-		// 拿起
-		case MotionEvent.ACTION_UP:
-			break;
-		default:
-			break;
-		}
-		return true;
-	}
-	
-	
-	
-	public void transformLeftOrRight(int left)
-	{
-		List<Integer> list =this.fgmUtil.getListMapTabKey();
-		if (left == MotionEvent.EDGE_LEFT) {
+	public void transformLeftOrRight(int left) {
+		List<Integer> list = this.fgmUtil.getListMapTabKey();
+		int rbId = 0;
+		if (left == MoveListerner.MOVE_TO_LEFT) {
 			for (int i = 0; i < list.size(); i++) {
-					if (i == (list.size()-1) && list.get(i) == fgmUtil.getCurrentrRbId())
+				if (i == (list.size() - 1)
+						&& list.get(i) == fgmUtil.getCurrentrRbId()) {
+					acMain.findViewById(list.get(0)).setBackgroundResource(
+							R.color.head);
+					rbId = list.get(0);
 					break;
-					else if (list.get(i) == fgmUtil.getCurrentrRbId()) {
-					fgmUtil.addFragmentManager(list.get(i+1));
+				} else if (list.get(i) == fgmUtil.getCurrentrRbId()) {
+					rbId = list.get(i + 1);
 					break;
 				}
 			}
-			 Toast.makeText(acMain, "向左", Toast.LENGTH_SHORT).show();
-		}
-		else if(left ==MotionEvent.EDGE_RIGHT)
-		{
+			//Toast.makeText(acMain, "向左", Toast.LENGTH_SHORT).show();
+		} else if (left == MoveListerner.MOVE_TO_RIGHT) {
 			for (int i = 0; i < list.size(); i++) {
-				if (i == 0 && list.get(i) == fgmUtil.getCurrentrRbId())
-				break;
-				else if (list.get(i) == fgmUtil.getCurrentrRbId()) {
-				fgmUtil.addFragmentManager(list.get(i-1));
-				break;
+				if (i == 0 && list.get(i) == fgmUtil.getCurrentrRbId()) {
+					rbId = list.get(list.size() - 1);
+					break;
+				} else if (list.get(i) == fgmUtil.getCurrentrRbId()) {
+					rbId = list.get(i - 1);
+					break;
+				}
 			}
+		//	Toast.makeText(acMain, "向右", Toast.LENGTH_SHORT).show();
 		}
-			
-			
-		Toast.makeText(acMain, "向右", Toast.LENGTH_SHORT).show();
+		if (rbId != 0) {
+			acMain.findViewById(fgmUtil.getCurrentrRbId()).setBackgroundResource(R.color.body);
+			fgmUtil.addFragmentManager(rbId);
+			acMain.findViewById(rbId).setBackgroundResource(R.color.head);
 		}
 	}
+
+
 	
 	public void transformTopOrBottom(int top)
 	{

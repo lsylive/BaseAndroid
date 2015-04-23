@@ -185,6 +185,7 @@ public class MainTabFragment extends AbsMainFragment {
 								 //Toast.makeText(acMain, ((RadioButton) acMain.findViewById(fgmUtil.getCurrentrRbId())).getText()+"  :   "+((RadioButton) acMain.findViewById(entry.getKey())).getText(), Toast.LENGTH_SHORT).show();
 								fgmUtil.setCurrentLayout(entry.getValue().getLayout());
 								fgmUtil.setCurrentrRbId(entry.getKey());
+								break;
 							}
 						}
 						isButtonsClickEvent = true;

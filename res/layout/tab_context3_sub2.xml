@@ -4,7 +4,7 @@
     android:id="@+id/context3_sub2"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="@color/white"
+    android:background="@color/body"
     android:orientation="vertical" >
 
     

@@ -7,7 +7,8 @@
     android:fadingEdge="vertical">    
     <LinearLayout    
         android:layout_width="fill_parent"    
-        android:layout_height="fill_parent"    
+        android:layout_height="fill_parent"   
+        android:background="@color/body" 
         android:orientation="vertical"    
         >    
     <!-- 时实负荷情况

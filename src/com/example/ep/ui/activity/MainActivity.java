@@ -20,13 +20,8 @@ import com.example.ep.ui.fragment.MainTabFragment;
 @SuppressLint({ "NewApi", "JavascriptInterface" })
 public class MainActivity extends AbsMainActivity {
 
-	
-	
 	private AbsMainFragment mainFragment;
 
-	
-	
-	
 	
 	//点击返回按钮,调用主界面Fragme中的处理方法
 	//提示：在activity中写onKeyDown后，onBackPressed将无效果
@@ -35,16 +30,6 @@ public class MainActivity extends AbsMainActivity {
 		mainFragment.onBackPressed();
 	}
 
-//	@Override
-//	public boolean dispatchTouchEvent(MotionEvent ev) {
-//		// TODO Auto-generated method stub
-//		return mainFragment.dispatchTouchEvent(ev);
-//	}
-	
-	
-	
-	
-	
 
 	@Override
 	protected void initMainFragment()
@@ -57,38 +42,6 @@ public class MainActivity extends AbsMainActivity {
 	    tx.commit();
 	}
 
-	
-	
-	
-	@Override
-	public boolean onTouchEvent(MotionEvent event) {
-//	     switch (event.getAction()) {
-//         case MotionEvent.ACTION_DOWN:// 手指按下时
-//                 startX = (int) event.getRawX();
-//                 startY = (int) event.getRawY();
-//                 break;
-//         case MotionEvent.ACTION_MOVE:// 手指移动时
-//                 int currentX = (int) event.getRawX();// 获取当前x坐标
-//                 int currentY = (int) event.getRawY();// 获取当前y坐标
-//                 int disX = currentX - startX;// x方向移动的距离
-//                 int disY = currentY - startY;// y方向移动的距离
-//                 // 当x方向移动的距离大于y方向移动的距离时
-//                 if (Math.abs(disX) > Math.abs(disY) ) {
-//                         
-//                 }
-//                 startX = (int) event.getRawX();
-//                 startY = (int) event.getRawY();
-//                 break;
-//         case MotionEvent.ACTION_UP:// 手指离开时
-//
-//                 break;
-//
-//         }
-		return super.onTouchEvent(event);
-	}
-
-
-	
 	
 
 }
